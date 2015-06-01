@@ -27,11 +27,11 @@
 				</md-sidenav>
 			</div>
 			<div flex="75">
-				<div style="margin-top: 55px" ng-include="'landingPage.html'" ng-controller="landingPage as lp" ng-if="main.mainView === 'landing'"></div>
-				<div ng-if="main.mainView === 'text'">
+				<div class="main-view" style="margin-top: 55px" ng-include="'landingPage.html'" ng-controller="landingPage as lp" ng-if="main.mainView === 'landing'"></div>
+				<div class="main-view" ng-if="main.mainView === 'text'">
 					<h3 style="text-align: center">{{ main.currentTitle }}</h3>
 				</div>
-				<div style="margin-top: -5px" ng-include="'textView.html'" ng-if="main.mainView === 'text'"></div>
+				<div class="main-view" style="margin-top: -5px" ng-include="'textView.html'" ng-if="main.mainView === 'text'"></div>
 			</div>
 		</div>
 	  <!-- Angular Material Dependencies -->

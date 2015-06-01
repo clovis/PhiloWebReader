@@ -2,11 +2,18 @@
 	cursor: pointer;
 }
 
-.repeated-item.ng-enter, .repeated-tile.ng-enter {
-  -webkit-transition:0.5s linear all;
-  -moz-transition:0.5s linear all;
-  -o-transition:0.5s linear all;
-  transition:0.5s linear all;
+.repeated-item.ng-enter {
+  -webkit-transition:0.3s linear all;
+  -moz-transition:0.3s linear all;
+  -o-transition:0.3s linear all;
+  transition:0.3s linear all;
+  opacity:0;
+}
+.repeated-tile.ng-enter {
+  -webkit-transition:0.2s linear all;
+  -moz-transition:0.2s linear all;
+  -o-transition:0.2s linear all;
+  transition:0.2s linear all;
   opacity:0;
 }
 
@@ -30,6 +37,24 @@
 .repeated-item.ng-leave.ng-leave-active, .repeated-tile.ng-leave-active {
   opacity:0;
 }
+.repeated-tile.ng-enter-stagger {
+  /* this will have a 100ms delay between each successive leave animation */
+  transition-delay: 50ms;
+
+  /* in case the stagger doesn't work then the duration value
+   must be set to 0 to avoid an accidental CSS inheritance */
+  transition-duration: 0s;
+}
+/*.main-view.ng-leave {
+	-webkit-transition:0.3s linear all;
+  -moz-transition:0.3s linear all;
+  -o-transition:0.3s linear all;
+  transition:0.3s linear all;
+  opacity:1;
+}
+.main-view.ng-leave-active {
+	opacity: 0;
+}*/
 
 /*Text formatting*/
 span.note {
