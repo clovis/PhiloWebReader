@@ -3,7 +3,7 @@
 		<md-card-content>
 			<div layout="row" layout-sm="column" layout-wrap layout-padding>
 				<div flex="50" ng-repeat="item in lp.bibliography | orderBy: 'citation.date.label'">
-					<md-button class="md-raised repeated-item" style="width: 100%; margin-bottom: 15px" ng-click="main.goToTableOfContents(item)">
+					<md-button class="md-raised md-primary repeated-tile" style="width: 100%; margin-bottom: 15px" ng-click="main.goToTableOfContents(item)">
 						<h4 style="margin: 0; white-space: normal; ">{{ item.citation.title.label }}</h4>
 						<h5 style="margin: 0; white-space: normal;">William Shakespeare</h5>
 						<p style="margin: 0; white-space: normal;">{{ item.citation.date.label }}</p>

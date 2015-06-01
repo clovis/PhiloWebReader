@@ -2,8 +2,8 @@ var app = angular.module('PhiloReaderApp', ['ngMaterial', 'ngAnimate']);
 
 app.config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('indigo')
-    .accentPalette('blue');
+    .primaryPalette('blue-grey')
+    .accentPalette('indigo');
 });
 
 app.filter('unsafe', function($sce) { return $sce.trustAsHtml; });

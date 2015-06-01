@@ -2,7 +2,7 @@
 	cursor: pointer;
 }
 
-.repeated-item.ng-enter {
+.repeated-item.ng-enter, .repeated-tile.ng-enter {
   -webkit-transition:0.5s linear all;
   -moz-transition:0.5s linear all;
   -o-transition:0.5s linear all;
@@ -19,15 +19,15 @@
   transition-duration: 0s;
 }
 
-.repeated-item.ng-enter.ng-enter-active {
+.repeated-item.ng-enter.ng-enter-active, .repeated-tile.ng-enter-active {
   opacity:1;
 }
 
-.repeated-item.ng-leave {
+.repeated-item.ng-leave, .repeated-tile.ng-leave {
   opacity:1;
 }
 
-.repeated-item.ng-leave.ng-leave-active {
+.repeated-item.ng-leave.ng-leave-active, .repeated-tile.ng-leave-active {
   opacity:0;
 }
 

@@ -14,7 +14,7 @@
 				<a id="home" ng-click="main.returnHome()">William Shakespeare's Complete Works</a>
 			</h1>
 		</md-toolbar>
-		<div layout="row">
+		<div layout="row" layout-padding>
 			<div flex="25">
 				<md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-sm')">
 					<h4 style="padding-left: 15px;">Table of Contents</h4>
@@ -26,9 +26,12 @@
 					</md-content>
 				</md-sidenav>
 			</div>
-			<div flex="75" style="margin-top: 55px">
-				<div ng-include="'landingPage.html'" ng-controller="landingPage as lp" ng-if="main.mainView === 'landing'"></div>
-				<div ng-include="'textView.html'" ng-if="main.mainView === 'text'"></div>
+			<div flex="75">
+				<div style="margin-top: 55px" ng-include="'landingPage.html'" ng-controller="landingPage as lp" ng-if="main.mainView === 'landing'"></div>
+				<div ng-if="main.mainView === 'text'">
+					<h3 style="text-align: center">{{ main.currentTitle }}</h3>
+				</div>
+				<div style="margin-top: -5px" ng-include="'textView.html'" ng-if="main.mainView === 'text'"></div>
 			</div>
 		</div>
 	  <!-- Angular Material Dependencies -->
