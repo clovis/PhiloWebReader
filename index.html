@@ -1,0 +1,42 @@
+<html lang="en" ng-app="PhiloReaderApp">
+	<head>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.0/angular-material.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="initial-scale=1" />
+	</head>
+	<body layout="column" ng-controller="AppCtrl as main">
+		<md-toolbar layout="row">
+			<md-button class="md-raised md-primary md-hue-2" ng-click="main.openLeftMenu()" hide-gt-sm>
+				Menu
+			</md-button>
+			<h1 class="md-toolbar-tools" layout-align-gt-sm="center">
+				<a id="home" ng-click="main.returnHome()">William Shakespeare's Complete Works</a>
+			</h1>
+		</md-toolbar>
+		<div layout="row">
+			<div flex="25">
+				<md-sidenav md-component-id="left" class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-sm')">
+					<h4 style="padding-left: 15px;">Table of Contents</h4>
+					<md-divider></md-divider>
+					<md-content class="md-primary">
+						<md-button class="md-primary repeated-item" style="width: 100%; text-align: initial;" ng-class="{ 'md-hue-2': item.philo_type === 'div1', 'md-hue-1': item.philo_type === 'div2'}" ng-repeat="item in main.tableOfContents" ng-click="main.getText(item)">
+							{{ item.label }}
+						</md-button>
+					</md-content>
+				</md-sidenav>
+			</div>
+			<div flex="75" style="margin-top: 55px">
+				<div ng-include="'landingPage.html'" ng-controller="landingPage as lp" ng-if="main.mainView === 'landing'"></div>
+				<div ng-include="'textView.html'" ng-if="main.mainView === 'text'"></div>
+			</div>
+		</div>
+	  <!-- Angular Material Dependencies -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-aria.min.js"></script>
+  
+	  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.0/angular-material.min.js"></script>
+	  <script src="app.js"></script>
+	</body>
+</html>

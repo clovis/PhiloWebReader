@@ -1,0 +1,165 @@
+#home:hover {
+	cursor: pointer;
+}
+
+.repeated-item.ng-enter {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+.repeated-item.ng-enter-stagger {
+  /* this will have a 100ms delay between each successive leave animation */
+  transition-delay: 30ms;
+
+  /* in case the stagger doesn't work then the duration value
+   must be set to 0 to avoid an accidental CSS inheritance */
+  transition-duration: 0s;
+}
+
+.repeated-item.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.repeated-item.ng-leave {
+  opacity:1;
+}
+
+.repeated-item.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+/*Text formatting*/
+span.note {
+	display: inline;
+}
+.xml-l {
+	display: block;
+}
+.xml-l::before {
+    font-family: 'Droid Sans Mono', sans-serif;
+	font-size: .7em;
+	white-space: pre;
+	width: 35px;
+	display: inline-block;
+}
+.xml-l[n]::before {
+    content: attr(n);
+    color: #bababa;
+}
+.xml-l[type="split"]::before {
+    content: "";
+}
+.xml-lb[type="hyphenInWord"] {
+    display: inline;
+}
+.xml-gap .xml-desc {
+	display: none;
+}
+.xml-gap::after {
+	content: "*";
+}
+.xml-hi {
+	font-style: italic;
+	font-variant: small-caps;
+}
+.xml-w::before {
+    margin:0;padding:0;float:left;
+}
+/*Remove spacing before punctuation*/
+.xml-w[pos=","], .xml-w[pos="."], .xml-w[pos=";"], .xml-w[pos="?"], .xml-w[pos="!"], .xml-w[pos=":"], .xml-w[pos="!"] {
+	margin-left: -.25em;
+}
+br {
+    content: " ";
+    display: block;
+}
+* Styling for theater */
+.xml-castitem::after {
+    content:"\A";
+    white-space:pre;
+}
+.xml-castlist>.xml-castitem:first-of-type::before {
+    content:"\A";
+    white-space:pre;
+}
+.xml-castgroup::before {
+    content:"\A";
+    white-space:pre;
+}
+b.headword {
+    font-weight: 700 !important;
+    font-size: 130%;
+    display: block;
+    margin-top: 20px;
+}
+.xml-lb {
+    display: block;
+}
+.xml-sp .xml-lb:first-of-type {
+    content: "";
+    white-space: normal;
+}
+.xml-lb[type="hyphenInWord"] {
+    display: inline;
+}
+#book-page .xml-sp {
+    display: block;
+}
+.xml-sp::before {
+    content:"\A";
+    white-space:pre;
+}
+.xml-stage+.xml-sp:nth-of-type(n+2)::before {
+    content: "";
+}
+.xml-fw, .xml-join {
+    display: none;
+}
+.xml-speaker+.xml-stage::before {
+    content: "";
+    white-space: normal;
+}
+.xml-stage {
+    font-style: italic;
+}
+.xml-stage::after {
+    content:"\A";
+    white-space:pre;
+}
+div1 div2::before {
+    content:"\A";
+    white-space:pre;
+}
+.xml-speaker {
+    font-weight: 700;
+}
+.xml-pb {
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
+.xml-pb::before {
+    content:"-" attr(n) "-";
+    white-space:pre;
+}
+
+.xml-lg {
+    display: block;
+}
+.xml-lg::after {
+    content: "\A";
+    white-space: pre;
+}
+.xml-lg:first-of-type::before {
+    content: "\A";
+    white-space: pre;
+}
+.xml-castList {
+    display: block;
+}
+.xml-castItem {
+    display: block;
+}
